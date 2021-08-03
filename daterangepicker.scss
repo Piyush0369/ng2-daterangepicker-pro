@@ -220,7 +220,7 @@
 
 .daterangepicker td.active,
 .daterangepicker td.active:hover {
-  background-color: #357ebd;
+  background-color: var(--$ng-datepicker-bg);
   border-color: transparent;
   color: #fff;
 }
@@ -346,8 +346,8 @@
 }
 
 .daterangepicker .ranges li.active {
-  background-color: #08c;
-  color: #fff;
+  background-color: #fff;
+  color: var(--$ng-datepicker-bg);
 }
 
 .daterangepicker.single.ranges {
