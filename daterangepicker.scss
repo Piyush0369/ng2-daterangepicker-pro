@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --red: 53;
+  --blue: 189;
+  --green: 126;
+  --ng-datepicker-bg: var(--red), var(--green), var(--blue);
+  --threshold: 0.5;
+}
+
 .daterangepicker {
   position: absolute;
   color: inherit;
@@ -200,7 +208,7 @@
 }
 
 .daterangepicker td.in-range {
-  background-color: #ebf4f8;
+  background-color: rgba(var(--ng-datepicker-bg), 0.5);
   border-color: transparent;
   color: #000;
   border-radius: 0;
@@ -220,7 +228,7 @@
 
 .daterangepicker td.active,
 .daterangepicker td.active:hover {
-  background-color: var(--ng-datepicker-bg);
+  background-color: rgb(var(--ng-datepicker-bg));
   border-color: transparent;
   color: #fff;
 }
@@ -347,7 +355,7 @@
 
 .daterangepicker .ranges li.active {
   background-color: #fff;
-  color: var(--ng-datepicker-bg);
+  color: rgb(var(--ng-datepicker-bg));
 }
 
 .daterangepicker.single.ranges {
@@ -410,6 +418,28 @@
   .daterangepicker .ranges,
   .daterangepicker .drp-calendar {
     float: left;
+  }
+
+  .applyBtn {
+    // background-color: rgb(var(--ng-datepicker-bg)) !important;
+    background: rgb(var(--red), var(--green), var(--blue)) !important;
+
+    /* calculates perceived lightness using the sRGB Luma method 
+    Luma = (red * 0.2126 + green * 0.7152 + blue * 0.0722) / 255 */
+    --r: calc(var(--red) * 0.2126);
+    --g: calc(var(--green) * 0.7152);
+    --b: calc(var(--blue) * 0.0722);
+    --sum: calc(var(--r) + var(--g) + var(--b));
+    --perceived-lightness: calc(var(--sum) / 255);
+
+    /* shows either white or black color depending on perceived darkness */
+    color: hsl(0, 0%, calc((var(--perceived-lightness) - var(--threshold)) * -10000000%)) !important;
+  }
+
+  .applyBtn:hover,
+  .applyBtn:focus,
+  .applyBtn:active {
+    background-color: rgba(var(--ng-datepicker-bg), 0.8) !important;
   }
 }
 
