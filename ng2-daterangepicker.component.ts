@@ -42,6 +42,7 @@ export class DaterangepickerComponent implements AfterViewInit, OnDestroy, DoChe
   ) {
     this._differ['options'] = this.differs.find(this.options).create();
     this._differ['settings'] = this.differs.find(this.config.settings).create();
+    this.hexAToRGBA(this.color)
   }
 
   ngAfterViewInit() {
@@ -68,7 +69,7 @@ export class DaterangepickerComponent implements AfterViewInit, OnDestroy, DoChe
   }
 
   private hexAToRGBA(h) {
-    let r = 0; g = 0, b = 0, a = 1;
+    let r = "", g = "", b = "", a = "";
 
     if (h.length == 5) {
       r = "0x" + h[1] + h[1];
@@ -91,10 +92,10 @@ export class DaterangepickerComponent implements AfterViewInit, OnDestroy, DoChe
       b = "0x" + h[5] + h[6];
       a = "0x01";
     }
-    a = +(a / 255).toFixed(3);
+    let as = +(Number(a) / 255).toFixed(3);
     this.setRootVariables(r, g, b)
 
-    return "rgba(" + +r + "," + +g + "," + +b + "," + a + ")";
+    return "rgba(" + +r + "," + +g + "," + +b + "," + as + ")";
   }
 
   private setRootVariables(r, g, b) {
