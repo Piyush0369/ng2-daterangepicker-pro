@@ -1,5 +1,3 @@
-$ng-datepicker-bg: #357ebd;
-
 /* You can add global styles to this file, and also import other style files */
 .daterangepicker {
   position: absolute;
@@ -222,7 +220,7 @@ $ng-datepicker-bg: #357ebd;
 
 .daterangepicker td.active,
 .daterangepicker td.active:hover {
-  background-color: $ng-datepicker-bg;
+  background-color: var(--ng-datepicker-bg);
   border-color: transparent;
   color: #fff;
 }
@@ -349,7 +347,7 @@ $ng-datepicker-bg: #357ebd;
 
 .daterangepicker .ranges li.active {
   background-color: #fff;
-  color: $ng-datepicker-bg;
+  color: var(--ng-datepicker-bg);
 }
 
 .daterangepicker.single.ranges {
