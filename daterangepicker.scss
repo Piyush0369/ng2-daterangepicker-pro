@@ -7,7 +7,7 @@
   --r: calc(var(--red) * 0.2126);
   --g: calc(var(--green) * 0.7152);
   --b: calc(var(--blue) * 0.0722);
-  --ng-datepicker-apply: var(--red), var(--green), var(--blue)
+  --ng-datepicker-apply: var(--red), var(--green), var(--blue);
   --sum: calc(var(--r) + var(--g) + var(--b));
   --perceived-lightness: calc(var(--sum) / 255);
   --text-color: hsl(0, 0%, calc((var(--perceived-lightness) - var(--threshold)) * -10000000%));
@@ -126,7 +126,7 @@
 }
 
 .daterangepicker .drp-calendar {
-  display: none;
+  /* display: none; */
   max-width: 270px;
 }
 
@@ -193,7 +193,7 @@
 
 .daterangepicker td.available:hover,
 .daterangepicker th.available:hover {
-  background-color: #eee;
+  background-color: rgba(var(--red), var(--green), var(--blue), 0.1);
   border-color: transparent;
   color: inherit;
 }
@@ -215,9 +215,10 @@
 
 .daterangepicker td.in-range {
   background-color: rgba(var(--red), var(--green), var(--blue), 0.1);
+  color: rgb(var(--red), var(--green), var(--blue));
   border-color: transparent;
-  color: #000;
   border-radius: 0;
+  font-weight: 600;
 }
 
 .daterangepicker td.start-date {
@@ -236,6 +237,7 @@
 .daterangepicker td.active:hover {
   background-color: rgb(var(--red), var(--green), var(--blue));
   border-color: transparent;
+  font-weight: 600;
 }
 
 .daterangepicker th.month {
@@ -311,8 +313,10 @@
 .daterangepicker .drp-buttons .btn {
   margin-left: 8px;
   font-size: 12px;
-  font-weight: bold;
-  padding: 4px 8px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border-width: 0px;
 }
 
 .daterangepicker.show-ranges.single.rtl .drp-calendar.left {
@@ -360,11 +364,36 @@
 
 .daterangepicker .ranges li.active {
   background-color: #fff;
+  font-weight: 600;
   color: rgb(var(--red), var(--green), var(--blue));
 }
 
 .daterangepicker.single .ranges {
   display: none;
+}
+
+.applyBtn {
+  background: rgb(var(--ng-datepicker-apply)) !important;
+  border-color: rgb(var(--ng-datepicker-apply)) !important;
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover,
+.applyBtn {
+  /* calculates perceived lightness using the sRGB Luma method 
+  Luma = (red * 0.2126 + green * 0.7152 + blue * 0.0722) / 255 */
+  /* shows either white or black color depending on perceived darkness */
+  color: var(--text-color) !important;
+}
+
+.cancelBtn {
+  background-color: #efefef;
+}
+
+.daterangepicker .drp-buttons .btn:hover,
+.daterangepicker .drp-buttons .btn:focus,
+.daterangepicker .drp-buttons .btn:active {
+  filter: brightness(0.9);
 }
 
 /*  Larger Screen Styling */
@@ -423,26 +452,6 @@
   .daterangepicker .ranges,
   .daterangepicker .drp-calendar {
     float: left;
-  }
-
-  .applyBtn {
-    background: rgb(--ng-datepicker-apply) !important;
-    border-color: rgb(--ng-datepicker-apply) !important;
-  }
-
-  .daterangepicker td.active,
-  .daterangepicker td.active:hover,
-  .applyBtn {
-    /* calculates perceived lightness using the sRGB Luma method 
-    Luma = (red * 0.2126 + green * 0.7152 + blue * 0.0722) / 255 */
-    /* shows either white or black color depending on perceived darkness */
-    color: var(--text-color) !important;
-  }
-
-  .applyBtn:hover,
-  .applyBtn:focus,
-  .applyBtn:active {
-    background-color: rgba(--ng-datepicker-apply, 0.85) !important;
   }
 }
 
