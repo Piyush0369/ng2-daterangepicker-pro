@@ -208,7 +208,7 @@
 }
 
 .daterangepicker td.in-range {
-  background-color: rgba(var(--ng-datepicker-bg), 0.5);
+  background-color: rgba(var(--red), var(--green), var(--blue), 0.5);
   border-color: transparent;
   color: #000;
   border-radius: 0;
@@ -228,7 +228,7 @@
 
 .daterangepicker td.active,
 .daterangepicker td.active:hover {
-  background-color: rgb(var(--ng-datepicker-bg));
+  background-color: rgb(var(--red), var(--green), var(--blue));
   border-color: transparent;
   color: #fff;
 }
@@ -355,7 +355,7 @@
 
 .daterangepicker .ranges li.active {
   background-color: #fff;
-  color: rgb(var(--ng-datepicker-bg));
+  color: rgb(var(--red), var(--green), var(--blue));
 }
 
 .daterangepicker.single.ranges {
@@ -439,7 +439,7 @@
   .applyBtn:hover,
   .applyBtn:focus,
   .applyBtn:active {
-    background-color: rgba(var(--ng-datepicker-bg), 0.8) !important;
+    background-color: rgba(var(--red), var(--green), var(--blue), 0.8) !important;
   }
 }
 
