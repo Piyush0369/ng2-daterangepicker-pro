@@ -70,7 +70,6 @@ export class DaterangepickerComponent implements AfterViewInit, OnDestroy, DoChe
   }
 
   private hexAToRGBA(h) {
-    console.log(h)
     if(h.length > 0){
       let r = "", g = "", b = "", a = "";
   
