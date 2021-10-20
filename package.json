@@ -1,6 +1,6 @@
 {
   "name": "ng2-daterangepicker-pro",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Piyush0369/ng2-daterangepicker-pro"
@@ -14,11 +14,13 @@
     "bootstrap-daterangepicker-plus": "^3.1.0"
   },
   "peerDependencies": {
-    "@angular/common": "^9.0.1",
-    "@angular/core": "^9.0.1",
+    "@angular/common": "^12.0.1",
+    "@angular/core": "^12.0.1",
     "tslib": "^1.10.0",
     "jquery": "^3.4.1",
     "@types/jquery": "^3.3.32"
   },
-  "sideEffects": ["*.css"]
+  "sideEffects": [
+    "*.css"
+  ]
 }
