@@ -11,6 +11,8 @@
   "homepage": "https://github.com/Piyush0369/ng2-daterangepicker-pro#readme",
   "license": "MIT",
   "dependencies": {
+    "@angular/cdk": "^12.2.11",
+    "@angular/material": "^12.2.11",
     "bootstrap-daterangepicker-plus": "^3.1.0"
   },
   "peerDependencies": {

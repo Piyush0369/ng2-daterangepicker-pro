@@ -5,16 +5,18 @@
     "target": "es2015",
     "declaration": true,
     "inlineSources": true,
+    "experimentalDecorators": true,
     "types": [],
     "lib": [
       "dom",
       "es2018"
-    ]
+    ],
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
-    "enableResourceInlining": true
+    "enableResourceInlining": true,
   },
   "exclude": [
     "src/test.ts",
